@@ -250,6 +250,35 @@ fun FormBiodata() {
                 )
 
 
+                OutlinedTextField(
+                    value = email,
+                    onValueChange = {
+                        email = it
+                    },
+                    modifier = Modifier.fillMaxWidth(),
+                    singleLine = true,
+                    shape = RoundedCornerShape(
+                        dimensionResource(
+                            id = R.dimen.field_corner
+                        )
+                    ),
+                    label = {
+                        Text(
+                            text = stringResource(
+                                id = R.string.email
+                            )
+                        )
+                    }
+                )
+
+                Spacer(
+                    modifier = Modifier.height(
+                        dimensionResource(
+                            id = R.dimen.field_spacing
+                        )
+                    )
+                )
+
             }
         }
     }
