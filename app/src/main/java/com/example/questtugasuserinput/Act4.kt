@@ -279,7 +279,61 @@ fun FormBiodata() {
                     )
                 )
 
+
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(
+                        dimensionResource(
+                            id = R.dimen.field_spacing
+                        )
+                    )
+                ) {
+
+                    /*
+                     * TANGGAL LAHIR
+                     */
+                    Box(
+                        modifier = Modifier.weight(1f)
+                    ) {
+
+                        OutlinedTextField(
+                            value = tanggalLahir,
+                            onValueChange = {},
+                            modifier = Modifier.fillMaxWidth(),
+                            readOnly = true,
+                            enabled = true,
+                            singleLine = true,
+                            shape = RoundedCornerShape(
+                                dimensionResource(
+                                    id = R.dimen.field_corner
+                                )
+                            ),
+                            label = {
+                                Text(
+                                    text = stringResource(
+                                        id = R.string.birth_date
+                                    )
+                                )
+                            },
+                            trailingIcon = {
+                                Icon(
+                                    painter = painterResource(
+                                        id = R.drawable.ic_calendar
+                                    ),
+                                    contentDescription = stringResource(
+                                        id = R.string.calendar_description
+                                    ),
+                                    tint = colorResource(
+                                        id = R.color.icon_color
+                                    )
+                                )
+                            }
+                        )
+
+                    }
+                }
             }
         }
-    }
+        }
+
 }
