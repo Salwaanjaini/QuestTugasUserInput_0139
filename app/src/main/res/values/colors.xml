@@ -3,6 +3,8 @@
 
     <color name="screen_background">#F5F5F5</color>
 
+    <color name="form_background">#FFFFFF</color>
 
+   
 
 </resources>
