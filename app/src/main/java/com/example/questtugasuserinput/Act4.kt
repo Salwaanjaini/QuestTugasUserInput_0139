@@ -43,3 +43,50 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import java.util.Calendar
 
+@Composable
+fun FormBiodata() {
+
+    var namaDepan by remember {
+        mutableStateOf("")
+    }
+
+    var namaBelakang by remember {
+        mutableStateOf("")
+    }
+
+    var email by remember {
+        mutableStateOf("")
+    }
+
+    var tanggalLahir by remember {
+        mutableStateOf("")
+    }
+
+    var experience by remember {
+        mutableStateOf("")
+    }
+
+    var androidSkill by remember {
+        mutableStateOf(false)
+    }
+
+    var uiuxSkill by remember {
+        mutableStateOf(false)
+    }
+
+    var webSkill by remember {
+        mutableStateOf(false)
+    }
+
+    var dropdownExpanded by remember {
+        mutableStateOf(false)
+    }
+
+    val context = LocalContext.current
+
+    val experienceList = stringArrayResource(
+        id = R.array.experience_list
+    )
+
+   
+}
