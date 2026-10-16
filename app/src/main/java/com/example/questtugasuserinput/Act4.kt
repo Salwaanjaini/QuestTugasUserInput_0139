@@ -187,4 +187,40 @@ fun FormBiodata() {
                         )
                     )
                 )
-            }            
+
+
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(
+                        dimensionResource(
+                            id = R.dimen.field_spacing
+                        )
+                    )
+                ) {
+
+                    OutlinedTextField(
+                        value = namaDepan,
+                        onValueChange = {
+                            namaDepan = it
+                        },
+                        modifier = Modifier.weight(1f),
+                        singleLine = true,
+                        shape = RoundedCornerShape(
+                            dimensionResource(
+                                id = R.dimen.field_corner
+                            )
+                        ),
+                        label = {
+                            Text(
+                                text = stringResource(
+                                    id = R.string.first_name
+                                )
+                            )
+                        }
+                    )
+
+
+                }
+            }
+        }
+    }    }
