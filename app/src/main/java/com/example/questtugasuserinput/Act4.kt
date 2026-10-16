@@ -168,4 +168,23 @@ fun FormBiodata() {
                 )
 
 
-              }
+                Text(
+                    text = stringResource(
+                        id = R.string.form_subtitle
+                    ),
+                    color = colorResource(
+                        id = R.color.subtitle_gray
+                    ),
+                    fontSize = dimensionResource(
+                        id = R.dimen.subtitle_text_size
+                    ).value.sp
+                )
+
+                Spacer(
+                    modifier = Modifier.height(
+                        dimensionResource(
+                            id = R.dimen.medium_spacing
+                        )
+                    )
+                )
+            }            
