@@ -241,6 +241,15 @@ fun FormBiodata() {
                     )
                 }
 
+                Spacer(
+                    modifier = Modifier.height(
+                        dimensionResource(
+                            id = R.dimen.field_spacing
+                        )
+                    )
+                )
+
+
             }
         }
     }
