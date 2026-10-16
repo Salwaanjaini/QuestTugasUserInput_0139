@@ -9,6 +9,8 @@
 
     <color name="subtitle_gray">#A0A0A0</color>
 
- 
+    <color name="text_primary">#202020</color>
+
+    
 
 </resources>
