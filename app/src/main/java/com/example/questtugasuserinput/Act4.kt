@@ -96,5 +96,20 @@ fun FormBiodata() {
                 experience.isNotEmpty() &&
                 (androidSkill || uiuxSkill || webSkill)
 
-   
-}
+    Scaffold(
+        modifier = Modifier.fillMaxSize(),
+        containerColor = colorResource(
+            id = R.color.screen_background
+        )
+    ) { innerPadding ->
+
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(innerPadding)
+        ) {
+
+
+
+
+           }
