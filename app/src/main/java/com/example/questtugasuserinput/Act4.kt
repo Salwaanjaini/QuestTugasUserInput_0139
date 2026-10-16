@@ -88,5 +88,13 @@ fun FormBiodata() {
         id = R.array.experience_list
     )
 
+    val formLengkap =
+        namaDepan.isNotEmpty() &&
+                namaBelakang.isNotEmpty() &&
+                email.isNotEmpty() &&
+                tanggalLahir.isNotEmpty() &&
+                experience.isNotEmpty() &&
+                (androidSkill || uiuxSkill || webSkill)
+
    
 }
