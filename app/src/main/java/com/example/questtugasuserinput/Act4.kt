@@ -371,6 +371,45 @@ fun FormBiodata() {
                     }
 
 
+                    Box(
+                        modifier = Modifier.weight(1f)
+                    ) {
+
+                        OutlinedTextField(
+                            value = experience,
+                            onValueChange = {},
+                            modifier = Modifier.fillMaxWidth(),
+                            readOnly = true,
+                            enabled = true,
+                            singleLine = true,
+                            shape = RoundedCornerShape(
+                                dimensionResource(
+                                    id = R.dimen.field_corner
+                                )
+                            ),
+                            label = {
+                                Text(
+                                    text = stringResource(
+                                        id = R.string.experience
+                                    )
+                                )
+                            },
+                            trailingIcon = {
+                                Icon(
+                                    painter = painterResource(
+                                        id = R.drawable.ic_arrow_drop_down
+                                    ),
+                                    contentDescription = stringResource(
+                                        id = R.string.dropdown_description
+                                    ),
+                                    tint = colorResource(
+                                        id = R.color.icon_color
+                                    )
+                                )
+                            }
+                        )
+
+                    }
                 }
             }
         }
