@@ -330,10 +330,49 @@ fun FormBiodata() {
                             }
                         )
 
+
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(
+                                    dimensionResource(
+                                        id = R.dimen.field_height
+                                    )
+                                )
+                                .clickable {
+
+                                    val calendar =
+                                        Calendar.getInstance()
+
+                                    DatePickerDialog(
+                                        context,
+                                        { _, year, month, day ->
+
+                                            tanggalLahir =
+                                                getFormattedDate(
+                                                    context = context,
+                                                    year = year,
+                                                    month = month,
+                                                    day = day
+                                                )
+                                        },
+                                        calendar.get(
+                                            Calendar.YEAR
+                                        ),
+                                        calendar.get(
+                                            Calendar.MONTH
+                                        ),
+                                        calendar.get(
+                                            Calendar.DAY_OF_MONTH
+                                        )
+                                    ).show()
+                                }
+                        )
                     }
+
+
                 }
             }
         }
-        }
-
+    }
 }
