@@ -13,5 +13,8 @@
 
     <color name="icon_color">#424242</color>
 
+    <color name="button_disabled">#DCDCDC</color>
+
+
 
 </resources>
