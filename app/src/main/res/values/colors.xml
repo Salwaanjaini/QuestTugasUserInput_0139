@@ -11,6 +11,7 @@
 
     <color name="text_primary">#202020</color>
 
-    
+    <color name="icon_color">#424242</color>
+
 
 </resources>
