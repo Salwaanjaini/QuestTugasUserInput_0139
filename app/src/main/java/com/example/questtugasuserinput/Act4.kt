@@ -110,6 +110,22 @@ fun FormBiodata() {
         ) {
 
 
+            Image(
+                painter = painterResource(
+                    id = R.drawable.header_biodata
+                ),
+                contentDescription = stringResource(
+                    id = R.string.header_description
+                ),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(
+                        dimensionResource(
+                            id = R.dimen.header_height
+                        )
+                    ),
+                contentScale = ContentScale.Crop
+            )
 
 
            }
