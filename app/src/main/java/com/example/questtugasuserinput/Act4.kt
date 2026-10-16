@@ -409,9 +409,215 @@ fun FormBiodata() {
                             }
                         )
 
+                        /*
+                         * AREA KLIK EXPERIENCE
+                         */
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(
+                                    dimensionResource(
+                                        id = R.dimen.field_height
+                                    )
+                                )
+                                .clickable {
+                                    dropdownExpanded = true
+                                }
+                        )
+
+
+                        DropdownMenu(
+                            expanded = dropdownExpanded,
+                            onDismissRequest = {
+                                dropdownExpanded = false
+                            }
+                        ) {
+
+                            experienceList.forEach { item ->
+
+                                DropdownMenuItem(
+                                    text = {
+                                        Text(
+                                            text = item
+                                        )
+                                    },
+                                    onClick = {
+
+                                        experience = item
+                                        dropdownExpanded = false
+                                    }
+                                )
+                            }
+                        }
                     }
+                }
+
+                Spacer(
+                    modifier = Modifier.height(
+                        dimensionResource(
+                            id = R.dimen.medium_spacing
+                        )
+                    )
+                )
+
+                /*
+                 * PILIH SKILL
+                 */
+                Text(
+                    text = stringResource(
+                        id = R.string.choose_skill
+                    ),
+                    modifier = Modifier.fillMaxWidth(),
+                    fontWeight = FontWeight.Bold,
+                    color = colorResource(
+                        id = R.color.text_primary
+                    ),
+                    fontSize = dimensionResource(
+                        id = R.dimen.skill_title_text_size
+                    ).value.sp
+                )
+
+                Spacer(
+                    modifier = Modifier.height(
+                        dimensionResource(
+                            id = R.dimen.small_spacing
+                        )
+                    )
+                )
+
+                /*
+                 * CHECKBOX SKILL
+                 */
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+
+                        Checkbox(
+                            checked = androidSkill,
+                            onCheckedChange = {
+                                androidSkill = it
+                            }
+                        )
+
+                        Text(
+                            text = stringResource(
+                                id = R.string.skill_android
+                            ),
+                            fontSize = dimensionResource(
+                                id = R.dimen.skill_text_size
+                            ).value.sp
+                        )
+                    }
+
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+
+                        Checkbox(
+                            checked = uiuxSkill,
+                            onCheckedChange = {
+                                uiuxSkill = it
+                            }
+                        )
+
+                        Text(
+                            text = stringResource(
+                                id = R.string.skill_uiux
+                            ),
+                            fontSize = dimensionResource(
+                                id = R.dimen.skill_text_size
+                            ).value.sp
+                        )
+                    }
+
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+
+                        Checkbox(
+                            checked = webSkill,
+                            onCheckedChange = {
+                                webSkill = it
+                            }
+                        )
+
+                        Text(
+                            text = stringResource(
+                                id = R.string.skill_web
+                            ),
+                            fontSize = dimensionResource(
+                                id = R.dimen.skill_text_size
+                            ).value.sp
+                        )
+                    }
+                }
+
+                Spacer(
+                    modifier = Modifier.height(
+                        dimensionResource(
+                            id = R.dimen.medium_spacing
+                        )
+                    )
+                )
+
+                /*
+                 * BUTTON PROCEED
+                 */
+                Button(
+                    onClick = {},
+                    modifier = Modifier.fillMaxWidth(),
+                    enabled = formLengkap,
+                    shape = RoundedCornerShape(
+                        dimensionResource(
+                            id = R.dimen.button_corner
+                        )
+                    ),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = colorResource(
+                            id = R.color.primary_purple
+                        ),
+                        disabledContainerColor = colorResource(
+                            id = R.color.button_disabled
+                        ),
+                        disabledContentColor = colorResource(
+                            id = R.color.button_disabled_text
+                        )
+                    )
+                ) {
+
+                    Text(
+                        text = stringResource(
+                            id = R.string.proceed
+                        )
+                    )
                 }
             }
         }
     }
+}
+
+fun getFormattedDate(
+    context: android.content.Context,
+    year: Int,
+    month: Int,
+    day: Int
+): String {
+
+    val calendar = Calendar.getInstance()
+
+    calendar.set(
+        year,
+        month,
+        day
+    )
+
+    return DateFormat
+        .getDateFormat(context)
+        .format(calendar.time)
 }
