@@ -219,8 +219,29 @@ fun FormBiodata() {
                         }
                     )
 
-
+                    OutlinedTextField(
+                        value = namaBelakang,
+                        onValueChange = {
+                            namaBelakang = it
+                        },
+                        modifier = Modifier.weight(1f),
+                        singleLine = true,
+                        shape = RoundedCornerShape(
+                            dimensionResource(
+                                id = R.dimen.field_corner
+                            )
+                        ),
+                        label = {
+                            Text(
+                                text = stringResource(
+                                    id = R.string.last_name
+                                )
+                            )
+                        }
+                    )
                 }
+
             }
         }
-    }    }
+    }
+}
